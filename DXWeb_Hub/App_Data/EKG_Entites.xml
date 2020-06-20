@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<items>
+  <item Text="Persons" NavigateUrl="#" />
+  <item Text="Organizations" NavigateUrl="#"  />
+  <item Text="Products" NavigateUrl="#"  />
+</items>

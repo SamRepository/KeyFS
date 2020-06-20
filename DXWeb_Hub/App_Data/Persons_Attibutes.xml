@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<menu>
+  <group Text="Gender">
+  </group>
+  <group Text="Birthday">
+  </group>
+  <group Text="Location">
+  </group>
+  <group Text="Mbox">
+  </group>
+</menu>

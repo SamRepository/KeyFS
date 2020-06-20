@@ -1,0 +1,168 @@
+<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Root.master.cs" Inherits="DXWeb_Hub.RootMaster" %>
+
+<%@ Register assembly="DevExpress.Web.Bootstrap.v16.2, Version=16.2.6.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" namespace="DevExpress.Web.Bootstrap" tagprefix="dx" %>
+
+<%-- DXCOMMENT: Page Root.master is a master page that contains the root layout (it includes Header, Cental Area, and Footer) --%>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <meta charset="UTF-8" />
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="Content/Site.css" />
+    <style type="text/css">
+        .auto-style5 {
+            width: 324px;
+        }
+        .auto-style6 {
+            width: 949px;
+        }
+        .auto-style9 {
+            height: 74px;
+        }
+        .auto-style10 {
+            height: 81px;
+        }
+        .auto-style7 {
+            font-size: x-large;
+            color: #000000;
+        }
+        .auto-style11 {
+            height: 74px;
+            width: 270px;
+        }
+        .auto-style12 {
+            height: 74px;
+            width: 497px;
+        }
+        .auto-style13 {
+            height: 45px;
+        }
+        .auto-style14 {
+            height: 74px;
+            width: 193px;
+        }
+    </style>
+</head>
+<body runat="server" id="Body">
+    <form id="form1" runat="server">
+    <dx:ASPxSplitter ID="ASPxSplitter1" runat="server" AllowResize="False" Orientation="Vertical"
+        FullscreenMode="True" SeparatorVisible="False" Height="100%" Width="100%" EnableHierarchyRecreation="False">
+        <Styles>
+            <Pane>
+                <Paddings Padding="0px" />
+                <Border BorderWidth="0px" />
+            </Pane>
+        </Styles>
+        <Panes>
+            <dx:SplitterPane Name="Header" AutoHeight="true" MinSize="90px">
+                <PaneStyle CssClass="headerPane">
+                    <BorderBottom BorderWidth="1px" />
+                </PaneStyle>
+                <ContentCollection>
+                    <dx:SplitterContentControl ID="SplitterContentControl1" runat="server">
+                        <div class="auto-style10">
+                            <table class="dxflInternalEditorTable_Metropolis">
+                                <tr>
+                                    <td class="auto-style11">&nbsp;&nbsp;
+                                        <img alt="" class="auto-style13" src="Content/MidSem_icon.png" />
+                                        &nbsp;
+                                        <a class="dxucButtonDisabled_Metropolis" href="~/"><span class="auto-style7">KeyFS Engine </span></a>&nbsp;&nbsp;&nbsp;</td>
+                                    <td class="auto-style12">&nbsp;&nbsp;<dx:ASPxButtonEdit ID="ASPxButtonEdit2" runat="server" CssClass="auto-style8" Text="Riad Mahrez" Height="32px" Theme="Default" Width="590px">
+                                            <Buttons>
+                                                <dx:EditButton>
+                                                    <Image IconID="find_find_16x16gray">
+                                                    </Image>
+                                                </dx:EditButton>
+                                            </Buttons>
+                                        </dx:ASPxButtonEdit>
+                                    </td>
+                                    <td class="auto-style14">
+                                        <dx:ASPxMenu ID="ASPxMenu1" runat="server" Theme="SoftOrange">
+                                            <Items>
+                                                <dx:MenuItem Text="List">
+                                                    <Image IconID="format_listbullets_16x16">
+                                                    </Image>
+                                                </dx:MenuItem>
+                                                <dx:MenuItem Text="Map">
+                                                    <Image IconID="maps_geopointmap_16x16">
+                                                    </Image>
+                                                </dx:MenuItem>
+                                                <dx:MenuItem Text="Graph">
+                                                    <Image IconID="chart_linewithmarkers_16x16">
+                                                    </Image>
+                                                </dx:MenuItem>
+                                            </Items>
+                                        </dx:ASPxMenu>
+                                    </td>
+                                    <td class="auto-style9">
+                                        <dx:ASPxMenu ID="ASPxMenu2" runat="server" Theme="SoftOrange">
+                                            <Items>
+                                                <dx:MenuItem Text="Settings">
+                                                    <Image IconID="setup_properties_16x16">
+                                                    </Image>
+                                                </dx:MenuItem>
+                                                <dx:MenuItem DropDownMode="True" Text="EN">
+                                                    <Items>
+                                                        <dx:MenuItem>
+                                                        </dx:MenuItem>
+                                                        <dx:MenuItem>
+                                                        </dx:MenuItem>
+                                                    </Items>
+                                                    <Image IconID="businessobjects_bolocalization_16x16">
+                                                    </Image>
+                                                </dx:MenuItem>
+                                            </Items>
+                                        </dx:ASPxMenu>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </dx:SplitterContentControl>
+                </ContentCollection>
+            </dx:SplitterPane>
+            <dx:SplitterPane Name="Content" MinSize="400px">
+                <PaneStyle CssClass="mainContentPane">
+<BorderBottom BorderWidth="1px"></BorderBottom>
+                </PaneStyle>
+                <ContentCollection>
+                    <dx:SplitterContentControl ID="SplitterContentControl3" runat="server">
+                        <asp:ContentPlaceHolder ID="Content" runat="server">
+                        </asp:ContentPlaceHolder>
+                    </dx:SplitterContentControl>
+                </ContentCollection>
+                <PaneStyle BackColor="white">
+                    <BorderBottom BorderWidth="1px" />
+                </PaneStyle>
+            </dx:SplitterPane>
+
+            <dx:SplitterPane MinSize="40px" Name="Footer">
+                <ContentCollection>
+                    <dx:SplitterContentControl runat="server">
+                        &nbsp;<table class="dx-justification">
+                            <tr>
+                                <td class="auto-style5" style="font-weight: 700">&nbsp; &nbsp;
+                                    <dx:ASPxLabel ID="ASPxLabel1" runat="server" Text="  User: Samir SELLAMI">
+                                    </dx:ASPxLabel>
+                                    &nbsp;</td>
+                                <td class="auto-style6">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                    <dx:ASPxLabel ID="ASPxLabel2" runat="server" Text=" Copyright © 2018 MidSem Facated Navigation.">
+                                    </dx:ASPxLabel>
+                                    &nbsp;</td>
+                                <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;</td>
+                            </tr>
+                        </table>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    </dx:SplitterContentControl>
+                </ContentCollection>
+            </dx:SplitterPane>
+        </Panes>
+    </dx:ASPxSplitter>
+    
+<%-- DXCOMMENT: Configure a datasource for the header menu --%>
+<asp:XmlDataSource ID="XmlDataSourceHeader" runat="server" DataFile="~/App_Data/EKG_Entites.xml"
+    XPath="/items/*"></asp:XmlDataSource>
+
+    
+    </form>
+</body>
+</html>

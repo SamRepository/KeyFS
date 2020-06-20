@@ -1,0 +1,106 @@
+<%@ Master Language="C#" MasterPageFile="~/Root.master" AutoEventWireup="true" CodeBehind="Main.master.cs" Inherits="DXWeb_Hub.MainMaster" %>
+
+<%-- DXCOMMENT: Page Main.master is a master page that contains central area layout --%>
+<asp:Content ID="Content2" ContentPlaceHolderID="Content" runat="server">
+    <dx:ASPxSplitter ID="ContentSplitter" runat="server" Width="100%" Height="100%">
+                        <ClientSideEvents PaneResized="function(s, e) { 
+            if(window.ASPxDataView1 && e.pane.name == 'ContentCenter')
+                ASPxDataView1.SetHeight(e.pane.GetClientHeight());
+            }" />
+                <Styles>
+            <Pane>
+                <Paddings Padding="0px" />
+                <Border BorderWidth="0px" />
+            </Pane>
+        </Styles>
+        <Panes>
+            <dx:SplitterPane Name="ContentLeft" ShowCollapseBackwardButton="True" Size="200px" MinSize="150px">
+                <PaneStyle CssClass="leftPane">
+<Paddings Padding="1px"></Paddings>
+                </PaneStyle>
+                <PaneStyle>
+                    <Paddings Padding="1px" />
+                </PaneStyle>
+                <ContentCollection>
+                    <dx:SplitterContentControl>
+                        <div class="leftPanel">
+                            <%-- DXCOMMENT: Configure the left panel's ASPxNavBar --%>
+                            <dx:ASPxRoundPanel ID="ASPxRoundPanel1" runat="server" HeaderText="Filter Results" ShowCollapseButton="True" Width="200px">
+                                <PanelCollection>
+                                    <dx:PanelContent runat="server">
+                                        <dx:ASPxNavBar ID="ASPxNavBar1" runat="server" AutoCollapse="True" EnableAnimation="True" Width="100%" Theme="SoftOrange">
+                                            <Groups>
+                                                <dx:NavBarGroup Text="Persons (2)">
+                                                    <Items>
+                                                        <dx:NavBarItem Text="Full Name">
+                                                        </dx:NavBarItem>
+                                                        <dx:NavBarItem Text="Gender">
+                                                        </dx:NavBarItem>
+                                                        <dx:NavBarItem Text="Bithdate">
+                                                        </dx:NavBarItem>
+                                                        <dx:NavBarItem Text="Place">
+                                                            <Template>
+                                                                <dx:ASPxMenu ID="ASPxMenu3" runat="server" EnableTheming="True" Orientation="Vertical" Theme="SoftOrange">
+                                                                    <Items>
+                                                                        <dx:MenuItem Text="Algeria">
+                                                                            <Items>
+                                                                                <dx:MenuItem Text="Chelf (1)">
+                                                                                </dx:MenuItem>
+                                                                            </Items>
+                                                                        </dx:MenuItem>
+                                                                        <dx:MenuItem Text="United Kingdom">
+                                                                            <Items>
+                                                                                <dx:MenuItem Text="Manchester (1)">
+                                                                                </dx:MenuItem>
+                                                                                <dx:MenuItem Text="Leicester (1)">
+                                                                                </dx:MenuItem>
+                                                                            </Items>
+                                                                        </dx:MenuItem>
+                                                                    </Items>
+                                                                </dx:ASPxMenu>
+                                                            </Template>
+                                                        </dx:NavBarItem>
+                                                    </Items>
+                                                </dx:NavBarGroup>
+                                                <dx:NavBarGroup Expanded="False" Text="Organizations (1)">
+                                                    <Items>
+                                                        <dx:NavBarItem>
+                                                        </dx:NavBarItem>
+                                                    </Items>
+                                                </dx:NavBarGroup>
+                                            </Groups>
+                                            <Paddings Padding="0px" />
+                                            <Border BorderWidth="0px" />
+                                        </dx:ASPxNavBar>
+                                    </dx:PanelContent>
+                                </PanelCollection>
+                            </dx:ASPxRoundPanel>
+
+                        </div>
+                    </dx:SplitterContentControl>
+                </ContentCollection>
+            </dx:SplitterPane>
+            <dx:SplitterPane Name="ContentCenter">
+                <PaneStyle CssClass="contentPane"></PaneStyle>
+                <Separator Visible="True">
+                    <SeparatorStyle>
+                        <Border BorderWidth="1px" />
+                        <BorderTop BorderWidth="0px" />
+                    </SeparatorStyle>
+                </Separator>
+                <ContentCollection>
+                    <dx:SplitterContentControl>
+                        <asp:ContentPlaceHolder ID="MainContent" runat="server" />
+                    </dx:SplitterContentControl>
+                </ContentCollection>
+            </dx:SplitterPane>
+            
+        </Panes>
+    </dx:ASPxSplitter>
+    
+<%-- DXCOMMENT: Configure a datasource for the left panel's ASPxNavBar --%>
+<asp:XmlDataSource ID="XmlDataSourceLeft" runat="server" DataFile="~/App_Data/Persons_Attibutes.xml"
+    XPath="/menu/*"></asp:XmlDataSource>
+
+    
+</asp:Content>
